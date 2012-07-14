@@ -6,6 +6,7 @@
 !*.patch
 !*.rc
 !*.conf
+!*.sh
 !README*
 !.gitignore
 
