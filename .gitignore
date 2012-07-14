@@ -3,6 +3,7 @@
 
 # selectively include certain files
 !PKGBUILD-*
+!*.patch
 !*.rc
 !*.conf
 !README*
