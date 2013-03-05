@@ -1,0 +1,49 @@
+#Submitter: Buce <dmbuce@gmail.com>
+
+pkgname=python-pynbt-git
+pkgver=20130304
+pkgrel=2
+pkgdesc="Tiny, liberally-licensed NBT library"
+url="http://github.com/TkTech/PyNBT"
+depends=('python')
+makedepends=('python-distribute' 'git')
+license=('MIT')
+arch=('any')
+source=()
+md5sums=()
+provides=(python-pynbt)
+conflicts=(python-pynbt)
+replaces=(python-pynbt)
+
+_gitroot=https://github.com/TkTech/PyNBT.git
+_gitname=PyNBT
+
+build() {
+  cd "$srcdir"
+  msg "Connecting to GIT server...."
+
+  if [[ -d "$_gitname" ]]; then
+    cd "$_gitname" && git pull origin
+    msg "The local files are updated."
+  else
+    git clone "$_gitroot" "$_gitname"
+  fi
+
+  msg "GIT checkout done or server timeout"
+  msg "Starting build..."
+
+  rm -rf "$srcdir/$_gitname-build"
+  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
+  cd "$srcdir/$_gitname-build"
+
+  #
+  # BUILD HERE
+  #
+}
+
+package() {
+  cd "$srcdir/$_gitname-build"
+  python setup.py install --root="$pkgdir" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:
