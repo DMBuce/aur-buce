@@ -2,7 +2,7 @@
 
 pkgname=buceutils-git
 pkgver=0.19.0c6a45e
-pkgrel=1
+pkgrel=2
 pkgdesc="A collection of simple utilities."
 arch=(any)
 url="https://github.com/DMBuce/buceutils"
@@ -14,7 +14,7 @@ depends=('tar' 'p7zip' 'gzip' 'bzip2' 'unrar' 'xz' 'unzip' 'java-environment' 'r
 makedepends=('git')
 provides=(buceutils)
 conflicts=(buceutils)
-replaces=(buceutils)
+replaces=()
 backup=()
 options=()
 install=

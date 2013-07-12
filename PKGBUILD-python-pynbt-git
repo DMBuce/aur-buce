@@ -2,7 +2,7 @@
 
 pkgname=python-pynbt-git
 pkgver=20130304
-pkgrel=3
+pkgrel=4
 pkgdesc="Tiny, liberally-licensed NBT library"
 url="http://github.com/TkTech/PyNBT"
 depends=('python')
@@ -13,7 +13,7 @@ source=()
 md5sums=()
 provides=(python-pynbt)
 conflicts=(python-pynbt)
-replaces=(python-pynbt)
+replaces=()
 
 _gitroot=https://github.com/TkTech/PyNBT.git
 _gitname=PyNBT

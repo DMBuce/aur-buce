@@ -2,7 +2,7 @@
 
 pkgname=mcexplore-git
 pkgver=20120710
-pkgrel=1
+pkgrel=2
 pkgdesc="Use a minecraft server to generate a square of land."
 arch=(any)
 url="https://gist.github.com/854679"
@@ -12,7 +12,7 @@ depends=(python2)
 makedepends=('git' 'asciidoc')
 provides=(mcexplore)
 conflicts=(mcexplore)
-replaces=(mcexplore)
+replaces=()
 backup=()
 options=()
 install=

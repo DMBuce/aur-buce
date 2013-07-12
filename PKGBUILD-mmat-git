@@ -2,7 +2,7 @@
 
 pkgname=mmat-git
 pkgver=20120713
-pkgrel=2
+pkgrel=3
 pkgdesc="Delete unecessary minecraft chunks."
 arch=(any)
 url="https://github.com/hwei/Minecraft-Map-Auto-Trim"
@@ -11,7 +11,7 @@ depends=('java-environment' 'bash')
 makedepends=('git' 'findutils' 'java-environment')
 provides=(mmat)
 conflicts=(mmat)
-replaces=(mmat)
+replaces=()
 source=(mmat.sh)
 md5sums=('ed92d60335419092a924ed3dbac96870')
 
