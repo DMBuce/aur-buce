@@ -1,7 +1,7 @@
 # Maintainer: Buce <dmbuce@gmail.com>
 
 pkgname=buceutils-git
-pkgver=0.18.df32340
+pkgver=0.19.0c6a45e
 pkgrel=1
 pkgdesc="A collection of simple utilities."
 arch=(any)
