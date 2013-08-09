@@ -1,7 +1,7 @@
 # Maintainer: Buce <dmbuce@gmail.com>
 
 pkgname=pacrepo-git
-pkgver=0.8.1faa010
+pkgver=0.30.11c32bd
 pkgrel=1
 pkgdesc="A simple pacman repository management script"
 arch=(any)
@@ -16,7 +16,7 @@ replaces=()
 backup=('etc/pacrepo.conf')
 options=()
 install=
-source=('git+file:///home/woody/devel/proj/pacrepo')
+source=('git://github.com/DMBuce/pacrepo.git')
 md5sums=('SKIP')
 
 pkgver() {
