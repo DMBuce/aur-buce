@@ -4,6 +4,7 @@
 # selectively include certain files
 !PKGBUILD-*
 !*.patch
+!*.install
 !*.rc
 !*.conf
 !*.sh
