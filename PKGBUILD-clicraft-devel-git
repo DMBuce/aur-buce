@@ -1,6 +1,6 @@
 # Maintainer: DMBuce <dmbuce@gmail.com>
 pkgname=clicraft-devel-git
-pkgver=0.0.6.38.ge9240e7
+pkgver=0.0.7.19.gea7614a
 pkgver() {
   cd "$srcdir/$_gitname"
   git describe --always | sed 's|-|.|g'
@@ -47,6 +47,7 @@ package() {
   make DESTDIR="$pkgdir" install
 
   install -Dm755 "$startdir/$pkgname.rc" "${pkgdir}/etc/rc.d/$pkgname"
+  install -D -m 644 "$srcdir/$_gitname/LICENSE" "$pkgdir/usr/share/licenses/clicraft/LICENSE"
 }
 
 # vim:set ts=2 sw=2 et:
