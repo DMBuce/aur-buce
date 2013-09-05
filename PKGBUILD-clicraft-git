@@ -1,4 +1,4 @@
-# Maintainer: DMBuce <dmbuce@gmail.com>
+# Maintainer: Buce <dmbuce@gmail.com>
 pkgname=clicraft-git
 pkgver=0.0.7.19.gea7614a
 pkgver() {

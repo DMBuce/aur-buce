@@ -1,5 +1,5 @@
-#Contributor: Danie Roux <accounts@danieroux.com>
-#Maintainer: Buce <dmbuce@gmail.com>
+# Maintainer: Buce <dmbuce@gmail.com>
+# Contributor: Danie Roux <accounts@danieroux.com>
 
 pkgname=etckeeper
 pkgver=1.9
