@@ -2,10 +2,10 @@
 # Contributor: Maxwell Pray a.k.a. Synthead <synthead@gmail.com>
 
 pkgname=minecraft-overviewer-git
-pkgver=v0.10.0.70.g2d44e82
+pkgver=v0.10.0.92.gac4f810
 pkgver() {
 	cd "$srcdir/$_gitname"
-	git describe --always | sed 's|-|.|g'
+	git describe --tags --match 'v*.*.*' | sed 's|-|.|g'
 }
 pkgrel=1
 pkgdesc="Render large resolution images of a Minecraft map with a Google Maps powered interface"
