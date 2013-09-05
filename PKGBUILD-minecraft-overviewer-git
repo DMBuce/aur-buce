@@ -5,7 +5,7 @@
 pkgname=minecraft-overviewer-git
 pkgver=v0.10.0.92.gac4f810
 pkgver() {
-	cd "$srcdir/$_gitname"
+	cd "$srcdir/$pkgname"
 	git describe --tags --match 'v*.*.*' | sed 's|-|.|g'
 }
 pkgrel=1
@@ -15,16 +15,16 @@ url="https://github.com/overviewer/Minecraft-Overviewer"
 license=('GPL')
 depends=('python2' 'python-imaging' 'python2-numpy')
 makedepends=('git')
-source=("git://github.com/overviewer/Minecraft-Overviewer.git")
+source=("$pkgname::git://github.com/overviewer/Minecraft-Overviewer.git")
 md5sums=(SKIP)
-_gitname="Minecraft-Overviewer"
+pkgname="Minecraft-Overviewer"
 
 build() {
-	cd "$srcdir/$_gitname"
+	cd "$srcdir/$pkgname"
 	python2 "setup.py" build
 }
 
 package() {
-	cd "$srcdir/$_gitname"
+	cd "$srcdir/$pkgname"
 	python2 "setup.py" install --prefix="$pkgdir/usr"
 } 

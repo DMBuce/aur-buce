@@ -3,7 +3,7 @@
 pkgname=python-pynbt-git
 pkgver=1.2.0.49.gb8c6494
 pkgver() {
-	cd "$srcdir/$_gitname"
+	cd "$srcdir/$pkgname"
 	git describe --always | sed 's|-|.|g'
 }
 pkgrel=1
@@ -13,20 +13,18 @@ depends=('python')
 makedepends=('python-distribute' 'git')
 license=('MIT')
 arch=('any')
-source=('git+https://github.com/TkTech/PyNBT.git')
+source=("$pkgname::git+https://github.com/TkTech/PyNBT.git")
 md5sums=(SKIP)
 provides=(python-pynbt)
 conflicts=(python-pynbt)
 replaces=()
 
-_gitname=PyNBT
-
 build() {
-  cd "$srcdir/$_gitname"
+  cd "$srcdir/$pkgname"
 }
 
 package() {
-  cd "$srcdir/$_gitname"
+  cd "$srcdir/$pkgname"
   python setup.py install --root="$pkgdir" --optimize=1
   install -D -m644 LICENCE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

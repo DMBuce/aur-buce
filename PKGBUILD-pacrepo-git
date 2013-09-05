@@ -16,16 +16,16 @@ replaces=()
 backup=('etc/pacrepo.conf')
 options=()
 install=
-source=('git://github.com/DMBuce/pacrepo.git')
+source=("$pkgname::git://github.com/DMBuce/pacrepo.git")
 md5sums=('SKIP')
 
 pkgver() {
-  cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/$pkgname"
   echo "0.$(git rev-list --count HEAD).$(git describe --always )"
 }
 
 prepare() {
-  cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/$pkgname"
 
   sed -i '/^prefix/        s#/usr/local#/usr#
           /^sysconfdir/    s#=.*#= /etc#
@@ -33,12 +33,12 @@ prepare() {
 }
 
 build() {
-  cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/$pkgname"
   make
 }
 
 package() {
-  cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/$pkgname"
   make DESTDIR="$pkgdir" install
   install -D -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

@@ -18,19 +18,19 @@ noextract=()
 md5sums=(SKIP)
 
 prepare() {
-  cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/$pkgname"
   cd doc
   sed -i '/^mandir/ s#/usr/local#/usr#' Makefile
 }
 
 build() {
-  cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/$pkgname"
   cd doc
   make
 }
 
 package() {
-  cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/$pkgname"
   install -D -m755 norbert.py "$pkgdir/usr/bin/norbert"
   install -D -m755 vinbt "$pkgdir/usr/bin/vinbt"
   cd doc
