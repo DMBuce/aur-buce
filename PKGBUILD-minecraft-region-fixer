@@ -16,7 +16,7 @@ conflicts=('minecraft-region-fixer')
 provides=('minecraft-region-fixer')
 source=('minecraft-region-fixer.sh'
         "git://github.com/Fenixin/Minecraft-Region-Fixer.git")
-md5sums=('b7c74fb738a9aba4968a4c8cbfe29def'
+md5sums=('f324dbe4aa82d126ced46e77fed828ae'
          'SKIP')
 
 _gitname="Minecraft-Region-Fixer"
@@ -27,9 +27,12 @@ _gitname="Minecraft-Region-Fixer"
 
 package() {
   cd "$srcdir/$_gitname"
-  mkdir -p "$pkgdir/opt/minecraft-region-fixer"
+
+  _installdir="usr/lib/python$(python2 --version 2>&1 | grep -o '2\.[0-9]*')/site-packages/${pkgname%-git}"
+  mkdir -p "$pkgdir/$_installdir"
+  cp -r * "$pkgdir/$_installdir"
+
   mkdir -p "$pkgdir/usr/bin"
-  cp -r * "$pkgdir/opt/minecraft-region-fixer"
   install -m 755 -T "$srcdir/minecraft-region-fixer.sh" "$pkgdir/usr/bin/minecraft-region-fixer"
 } 
 

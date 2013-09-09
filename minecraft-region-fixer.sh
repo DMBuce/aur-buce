@@ -1,2 +1,2 @@
 #!/bin/bash
-python2 /opt/minecraft-region-fixer/region-fixer.py "$@"
+python2 /usr/lib/python2.7/site-packages/minecraft-region-fixer/region-fixer.py "$@"
