@@ -14,12 +14,16 @@ depends=('python2')
 makedepends=('git')
 conflicts=('minecraft-region-fixer')
 provides=('minecraft-region-fixer')
-source=('minecraft-region-fixer.sh'
-        "git://github.com/Fenixin/Minecraft-Region-Fixer.git")
-md5sums=('f324dbe4aa82d126ced46e77fed828ae'
-         'SKIP')
+source=("git://github.com/Fenixin/Minecraft-Region-Fixer.git")
+md5sums=('SKIP')
 
 _gitname="Minecraft-Region-Fixer"
+
+prepare() {
+  cd "$srcdir/$_gitname"
+  sed -i '1 s|python|python2|g' region-fixer.py
+  chmod +x region-fixer.py
+}
 
 #build() {
 #  cd "$srcdir/$_gitname"
@@ -33,7 +37,7 @@ package() {
   cp -r * "$pkgdir/$_installdir"
 
   mkdir -p "$pkgdir/usr/bin"
-  install -m 755 -T "$srcdir/minecraft-region-fixer.sh" "$pkgdir/usr/bin/minecraft-region-fixer"
+  ln -s "/$_installdir/region-fixer.py" "$pkgdir/usr/bin/region-fixer"
 } 
 
 # vim:set ts=2 sw=2 et:
