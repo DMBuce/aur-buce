@@ -1,6 +1,10 @@
 # Maintainer: ssc <chasessc@gmail.com>
 pkgname=minecraft-region-fixer-git
-pkgver=20120209
+pkgver=v0.1.1.3.g0aeb5d3
+pkgver() {
+	cd "$srcdir/$_gitname"
+	git describe --always | sed 's|-|.|g; s|^v||'
+}
 pkgrel=1
 pkgdesc="Tries to fix Minecraft worlds (or region files)."
 arch=('i686' 'x86_64')
@@ -8,25 +12,18 @@ url="https://github.com/Fenixin/Minecraft-Region-Fixer"
 license=('GPL')
 depends=('python2')
 makedepends=('git')
-source=('minecraft-region-fixer.sh')
-md5sums=('b7c74fb738a9aba4968a4c8cbfe29def')
+conflicts=('minecraft-region-fixer')
+provides=('minecraft-region-fixer')
+source=('minecraft-region-fixer.sh'
+        "git://github.com/Fenixin/Minecraft-Region-Fixer.git")
+md5sums=('b7c74fb738a9aba4968a4c8cbfe29def'
+         'SKIP')
 
-_gitroot="git://github.com/Fenixin/Minecraft-Region-Fixer.git"
 _gitname="Minecraft-Region-Fixer"
 
-build() {
-  cd "$srcdir"
-  msg "Connecting to GIT server...."
-
-  if [ -d $_gitname ] ; then
-    cd $_gitname && git pull origin
-    msg "The local files are updated."
-  else
-    git clone $_gitroot $_gitname
-  fi
-
-  msg "GIT checkout done or server timeout"
-}
+#build() {
+#  cd "$srcdir/$_gitname"
+#}
 
 package() {
   cd "$srcdir/$_gitname"
