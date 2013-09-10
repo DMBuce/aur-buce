@@ -8,7 +8,7 @@ pkgver() {
 	cd "$srcdir/$pkgname"
 	git describe --tags --match 'v*.*.*' | sed 's|-|.|g; s|^v||'
 }
-pkgrel=1
+pkgrel=2
 pkgdesc="Render large resolution images of a Minecraft map with a Google Maps powered interface"
 arch=('x86_64' 'i686')
 url="https://github.com/overviewer/Minecraft-Overviewer"

@@ -3,7 +3,7 @@
 
 pkgname=minecraft-region-fixer
 pkgver=0.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Tries to fix Minecraft worlds (or region files)."
 arch=('i686' 'x86_64')
 url="https://github.com/Fenixin/Minecraft-Region-Fixer"
