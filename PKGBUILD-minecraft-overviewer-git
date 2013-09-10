@@ -17,7 +17,6 @@ depends=('python2' 'python-imaging' 'python2-numpy')
 makedepends=('git')
 source=("$pkgname::git://github.com/overviewer/Minecraft-Overviewer.git")
 md5sums=(SKIP)
-pkgname="Minecraft-Overviewer"
 
 build() {
 	cd "$srcdir/$pkgname"
