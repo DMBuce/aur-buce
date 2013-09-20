@@ -27,7 +27,7 @@ build() {
   jar -cvfe "../mmat.jar" me.hwei.mctool.MapAutoTrim $(find . -name \*.class)
   popd
 
-  ( echo "#!$(which java) -jar" ; cat mmat.jar ) > mmat
+  ( echo "#!/usr/bin/java -jar" ; cat mmat.jar ) > mmat
 }
 
 package() {
