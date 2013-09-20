@@ -1,20 +1,20 @@
 # Maintainer: Buce <dmbuce@gmail.com>
 
-pkgname=mmat-git
+pkgname=minecraft-map-auto-trim-git
 pkgver=0.25.69adce0
 pkgver() {
   cd "$srcdir/$pkgname"
   echo "0.$(git rev-list --count HEAD).$(git describe --always )"
 }
-pkgrel=2
+pkgrel=1
 pkgdesc="Delete unecessary minecraft chunks."
 arch=(any)
 url="https://github.com/hwei/Minecraft-Map-Auto-Trim"
 license=('Apache')
 depends=('java-environment' 'bash')
 makedepends=('git' 'findutils' 'java-environment')
-provides=(mmat)
-conflicts=(mmat)
+provides=( mmat minecraft-map-auto-trim)
+conflicts=(mmat minecraft-map-auto-trim)
 replaces=()
 source=("$pkgname::git://github.com/hwei/Minecraft-Map-Auto-Trim.git")
 md5sums=(SKIP)
