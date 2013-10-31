@@ -24,14 +24,6 @@ pkgver() {
   echo "0.$(git rev-list --count HEAD).$(git describe --always )"
 }
 
-prepare() {
-  cd "$srcdir/$pkgname"
-
-  sed -i '/^prefix/        s#/usr/local#/usr#
-          /^sysconfdir/    s#=.*#= /etc#
-          /^localstatedir/ s#=.*#= /var#' Makefile
-}
-
 build() {
   cd "$srcdir/$pkgname"
   make
@@ -39,7 +31,7 @@ build() {
 
 package() {
   cd "$srcdir/$pkgname"
-  make DESTDIR="$pkgdir" install
+  make prefix=/usr sysconfdir=/etc localstatedir=/var DESTDIR="$pkgdir" install
   install -D -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
 

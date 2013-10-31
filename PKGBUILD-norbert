@@ -17,12 +17,6 @@ source=("git://github.com/DMBuce/norbert.git#tag=$pkgver")
 noextract=()
 md5sums=(SKIP)
 
-prepare() {
-  cd "$srcdir/$pkgname"
-  cd doc
-  sed -i '/^mandir/ s#/usr/local#/usr#' Makefile
-}
-
 build() {
   cd "$srcdir/$pkgname"
   cd doc
@@ -34,7 +28,7 @@ package() {
   install -D -m755 norbert.py "$pkgdir/usr/bin/norbert"
   install -D -m755 vinbt "$pkgdir/usr/bin/vinbt"
   cd doc
-  make DESTDIR="$pkgdir" doc-install
+  make mandir=/usr/share/man DESTDIR="$pkgdir" doc-install
 }
 
 # vim:set ts=2 sw=2 et:

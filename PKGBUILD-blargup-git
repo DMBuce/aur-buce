@@ -1,7 +1,7 @@
 # Maintainer: Buce <dmbuce@gmail.com>
 
 pkgname=blargup-git
-pkgver=0.6.1792298
+pkgver=0.8.d26648c
 pkgrel=1
 pkgdesc="A simple profile-based backup script."
 arch=(any)
@@ -30,14 +30,6 @@ pkgver() {
   echo "0.$(git rev-list --count HEAD).$(git describe --always )"
 }
 
-prepare() {
-  cd "$srcdir/$pkgname"
-
-  sed -i '/^prefix/        s#/usr/local#/usr#
-          /^sysconfdir/    s#=.*#= /etc#
-          /^localstatedir/ s#=.*#= /var#' Makefile
-}
-
 build() {
   cd "$srcdir/$pkgname"
   make
@@ -45,7 +37,7 @@ build() {
 
 package() {
   cd "$srcdir/$pkgname"
-  make DESTDIR="$pkgdir" install
+  make prefix=/usr sysconfdir=/etc localstatedir=/var DESTDIR="$pkgdir" install
 
   install -D -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   #install -D -m644 etc/examples/example-profile "$pkgdir/etc/blargup/example-profile"
