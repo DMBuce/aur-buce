@@ -12,7 +12,7 @@ license=('GPL2')
 #provides=('etckeeper')
 makedepends=('git')
 depends=('git' 'inetutils')
-source=("git://git.kitenet.net/etckeeper#tag=$pkgver"
+source=("$pkgname::git://git.kitenet.net/etckeeper#tag=$pkgver"
         "etckeeper.install")
 md5sums=(SKIP
         'add2ee5e8aac544ed1e1b18687f1f633')
