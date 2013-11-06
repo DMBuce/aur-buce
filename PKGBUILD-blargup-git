@@ -2,6 +2,10 @@
 
 pkgname=blargup-git
 pkgver=0.8.d26648c
+pkgver() {
+  cd "$srcdir/$pkgname"
+  echo "0.$(git rev-list --count HEAD).$(git describe --always )"
+}
 pkgrel=1
 pkgdesc="A simple profile-based backup script."
 arch=(any)
@@ -24,11 +28,6 @@ options=()
 install=
 source=("$pkgname::git://github.com/DMBuce/blargup.git")
 md5sums=('SKIP')
-
-pkgver() {
-  cd "$srcdir/$pkgname"
-  echo "0.$(git rev-list --count HEAD).$(git describe --always )"
-}
 
 build() {
   cd "$srcdir/$pkgname"
