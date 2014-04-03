@@ -9,5 +9,6 @@
 !*.conf
 !*.sh
 !README*
+!Makefile
 !.gitignore
 
