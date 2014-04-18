@@ -16,7 +16,7 @@ license=('unknown')
 groups=()
 depends=('tar' 'p7zip' 'gzip' 'bzip2' 'unrar' 'xz' 'unzip' 'java-environment'
          'rpmextract' 'cpio'
-         'cabextract' 'vim' 'curl' 'openssh' 'diffutils' 'alsa-utils'
+         'cabextract' 'curl' 'openssh' 'diffutils' 'alsa-utils'
          'xorg-xrandr' 'awk' 'imagemagick' 'python')
 makedepends=('git')
 provides=(buceutils)
