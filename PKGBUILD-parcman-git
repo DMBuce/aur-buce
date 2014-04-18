@@ -1,7 +1,7 @@
 # Maintainer: Buce <dmbuce@gmail.com>
 
-pkgname=pacrepo-git
-pkgver=0.r33.g8d7b0d7
+pkgname=parcman-git
+pkgver=0.r47.gfc587f9
 pkgver() {
   cd "$srcdir/$pkgname"
   if ! git describe --tags 2>/dev/null; then
@@ -11,28 +11,28 @@ pkgver() {
 pkgrel=1
 pkgdesc="A simple pacman repository management script"
 arch=(any)
-url="https://github.com/DMBuce/pacrepo"
+url="https://github.com/DMBuce/parcman"
 license=('BSD')
 groups=()
-depends=('openssh' 'pacman' 'bash')
+depends=('openssh' 'pacman' 'bash' 'patch' 'vim' 'reflector')
 makedepends=('git')
-provides=(pacrepo)
-conflicts=(pacrepo)
+provides=(parcman)
+conflicts=(parcman pacrepo)
 replaces=()
-backup=('etc/pacrepo.conf')
+backup=('etc/parcman.conf')
 options=()
 install=
-source=("$pkgname::git://github.com/DMBuce/pacrepo.git")
+source=("$pkgname::git://github.com/DMBuce/parcman")
 md5sums=('SKIP')
 
 build() {
   cd "$srcdir/$pkgname"
-  make prefix=/usr sysconfdir=/etc localstatedir=/var
+  make prefix=/usr sysconfdir=/etc localstatedir=/var libexecdir=/usr/lib
 }
 
 package() {
   cd "$srcdir/$pkgname"
-  make prefix=/usr sysconfdir=/etc localstatedir=/var DESTDIR="$pkgdir" install
+  make prefix=/usr sysconfdir=/etc localstatedir=/var libexecdir=/usr/lib DESTDIR="$pkgdir" install
   install -D -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
 
