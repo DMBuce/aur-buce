@@ -1,15 +1,15 @@
 # Maintainer: Buce <dmbuce@gmail.com>
 
 pkgname=parcman-git
-pkgver=0.r47.gfc587f9
+pkgver=0.r38.gc27bfd9
 pkgver() {
   cd "$srcdir/$pkgname"
   if ! git describe --tags 2>/dev/null; then
     echo "0.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
   fi | sed 's/-/.r/; s/-/./g'
 }
-pkgrel=1
-pkgdesc="A simple pacman repository management script"
+pkgrel=2
+pkgdesc="A collection of pacman-related tools"
 arch=(any)
 url="https://github.com/DMBuce/parcman"
 license=('BSD')
