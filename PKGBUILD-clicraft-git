@@ -23,7 +23,8 @@ backup=("etc/clicraft/action.d/explore.sh"
         "etc/cron.d/clicraft"
         "etc/logrotate.d/clicraft")
 install="$pkgname.install"
-source=("$pkgname::git://github.com/DMBuce/clicraft.git"
+source=("$pkgname::git://github.com/DMBuce/${pkgname%-git}.git"
+        #"$pkgname::git+ssh://git@mantrid/~/${pkgname%-git}.git"
         "$pkgname.install"
         "$pkgname.rc")
 md5sums=('SKIP'

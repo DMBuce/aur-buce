@@ -28,7 +28,8 @@ backup=('etc/blargup/conf.d/my.cnf'
         'etc/blargup/examples/example-profile')
 options=()
 install=
-source=("$pkgname::git://github.com/DMBuce/blargup.git")
+source=("$pkgname::git://github.com/DMBuce/${pkgname%-git}.git")
+#source=("$pkgname::git+ssh://git@mantrid/~/${pkgname%-git}.git")
 md5sums=('SKIP')
 
 build() {
