@@ -1,28 +1,28 @@
 # Maintainer: Buce <dmbuce@gmail.com>
 
-pkgname=parcman-git
-pkgver=0.r38.gc27bfd9
+pkgname=pacrepo-git
+pkgver=0.r40.gbb49a53
 pkgver() {
   cd "$srcdir/$pkgname"
   if ! git describe --tags 2>/dev/null; then
     echo "0.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
   fi | sed 's/-/.r/; s/-/./g'
 }
-pkgrel=2
+pkgrel=1
 pkgdesc="A collection of pacman-related tools"
 arch=(any)
-url="https://github.com/DMBuce/parcman"
+url="https://github.com/DMBuce/pacrepo"
 license=('BSD')
 groups=()
 depends=('openssh' 'pacman' 'bash' 'patch' 'vim' 'reflector')
 makedepends=('git')
-provides=(parcman)
-conflicts=(parcman pacrepo)
+provides=(pacrepo)
+conflicts=(pacrepo)
 replaces=()
-backup=('etc/parcman.conf')
+backup=('etc/pacrepo.conf')
 options=()
 install=
-source=("$pkgname::git://github.com/DMBuce/parcman")
+source=("$pkgname::git://github.com/DMBuce/pacrepo.git")
 md5sums=('SKIP')
 
 build() {
