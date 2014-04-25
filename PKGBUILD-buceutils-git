@@ -1,14 +1,14 @@
 # Maintainer: Buce <dmbuce@gmail.com>
 
 pkgname=buceutils-git
-pkgver=0.r23.gd6a38fe
+pkgver=0.r32.g005f821
 pkgver() {
   cd "$srcdir/$pkgname"
   if ! git describe --tags 2>/dev/null; then
     echo "0.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
   fi | sed 's/-/.r/; s/-/./g'
 }
-pkgrel=2
+pkgrel=1
 pkgdesc="A collection of simple utilities."
 arch=(any)
 url="https://github.com/DMBuce/buceutils"
