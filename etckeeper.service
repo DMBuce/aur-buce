@@ -8,5 +8,5 @@ Before=shutdown.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/etckeeper-autocommit
+ExecStart=/etc/cron.daily/etckeeper
 IOSchedulingClass=idle
