@@ -3,6 +3,6 @@
 all:
 
 clean:
-	rm -rf */
-	rm -f  *.pkg.tar.xz *.src.tar.gz
+	rm -rf */*/
+	rm -f  */*.pkg.tar.xz */*.src.tar.gz
 
