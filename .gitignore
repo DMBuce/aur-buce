@@ -1,14 +1,14 @@
-# ignore everything by default
-*
-
-# selectively include certain files
-!PKGBUILD-*
-!*.patch
-!*.install
-!*.rc
-!*.conf
-!*.sh
-!README*
-!Makefile
-!.gitignore
-
+## ignore everything by default
+#*
+#
+## selectively include certain files
+#!PKGBUILD-*
+#!*.patch
+#!*.install
+#!*.rc
+#!*.conf
+#!*.sh
+#!README*
+#!Makefile
+#!.gitignore
+#
