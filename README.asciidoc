@@ -3,9 +3,8 @@ README
 
 Arch Linux PKGBUILDs maintained by me (Buce).
 
-To build a package from this repository, use
-
-	makepkg -p PKGBUILD-<package>
+To build a package from this repository, go into the appropriate directory
+and run `makepkg`.
 
 Alternately, download the appropriate tarball from the
 https://aur.archlinux.org/packages.php?O=0&K=Buce&do_Search=Go&detail=1&C=0&SeB=m[AUR].
