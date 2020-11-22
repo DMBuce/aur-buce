@@ -1,13 +1,8 @@
 README
 ======
 
-Arch Linux PKGBUILDs maintained by me (Buce).
-
-To build a package from this repository, go into the appropriate directory
-and run `makepkg`.
-
-Alternately, download the appropriate tarball from the
-https://aur.archlinux.org/packages.php?O=0&K=Buce&do_Search=Go&detail=1&C=0&SeB=m[AUR].
+Since the AUR has git support, I'm no longer maintaining Arch Linux PKGBUILDs
+on GitHub. For the latest PKGBUILDs, use the AUR.
 
 /////
 vim: set syntax=asciidoc ts=4 sw=4 noet:
